@@ -1,17 +1,8 @@
-<template>
-    <div class="app-container">
-
-        <TopNav/>
-
-         
-
-        <div class="app-content">
-            <nuxt />
-        </div>
-
-        
-
-    </div>
+<template> 
+        <div class="container">
+            <TopNav/>
+            <Nuxt />
+        </div> 
 </template>
 
 <script>
@@ -19,18 +10,6 @@
     export default {
         components: {
             TopNav
-        },
-        computed: {
-            isSidebar() {
-                return this.$store.getters['nav/toggleSidebar']
-            }
-        },
-        watch: {
-            '$route': function() {
-                if (process.client && this.isSidebar && window.innerWidth < 768) {
-                    this.$store.dispatch('nav/toggleSidebar')
-                }
-            },
         }
     }
 </script>

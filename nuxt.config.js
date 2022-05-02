@@ -26,6 +26,27 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
+  auth: {
+    strategies: {
+      local: {
+        endpoints :{
+          login:{
+            url:'auth/login',method:'post',propertyName :'token'
+          },
+          login:{
+            url:'me',method:'get',propertyName :'data'
+          },
+          logout:{
+            url:'logout',method:'get', 
+          }
+        }
+       }
+    },
+    redirect: { 
+      login:'/auth/login',
+      home:'/'
+     },
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -40,9 +61,15 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
+  axios:{
+    baseurl:'http://127.0.0.1:8000/api'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS : true
   }
 }
