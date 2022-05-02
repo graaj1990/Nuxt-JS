@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+  
    <h1>Dashboard</h1>
    </div>
 </template>
@@ -8,6 +9,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'IndexPage'
+  name: 'IndexPage',
+  layout: 'TopNav'
 })
 </script>

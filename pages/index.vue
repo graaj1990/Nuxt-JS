@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   Home Page
-  <nuxt/>
+  <Nuxt/>
 </div>
 
   
@@ -9,10 +9,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import TopNav from '~/layout/partials/TopNav.vue'
+import TopNav from '~/layouts/partials/TopNav.vue'
 
 export default Vue.extend({
-  components: { TopNav },
+   
   name: 'IndexPage'
 })
 </script>
